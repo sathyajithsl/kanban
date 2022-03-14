@@ -1,0 +1,52 @@
+<div class="grid">
+  <div class="col-3"><p-card> Started </p-card></div>
+  <div class="col-3"><p-card> In Progress </p-card></div>
+  <div class="col-3"><p-card> Completed </p-card></div>
+  <div class="col-3"><p-card> Accepted </p-card></div>
+</div>
+<div class="grid">
+  <div class="col-3" id="started" pDroppable="task" (onDrop)="drop($event)">
+    <div class="flex flex-column" *ngFor="let task of started">
+      <app-task-card
+        style="margin: 10px"
+        [cardDetails]="task"
+        pDraggable="task"
+        (onDragStart)="dragStart(task)"
+        (emittedCardDetails)="cardDetailsToRemove($event)"
+      ></app-task-card>
+    </div>
+  </div>
+  <div class="col-3" id="inprogress" pDroppable="task" (onDrop)="drop($event)">
+    <div class="flex flex-column" *ngFor="let task of inprogress">
+      <app-task-card
+        style="margin: 10px"
+        [cardDetails]="task"
+        pDraggable="task"
+        (onDragStart)="dragStart(task)"
+        (emittedCardDetails)="cardDetailsToRemove($event)"
+      ></app-task-card>
+    </div>
+  </div>
+  <div class="col-3" id="completed" pDroppable="task" (onDrop)="drop($event)">
+    <div class="flex flex-column" *ngFor="let task of completed">
+      <app-task-card
+        style="margin: 10px"
+        [cardDetails]="task"
+        pDraggable="task"
+        (onDragStart)="dragStart(task)"
+        (emittedCardDetails)="cardDetailsToRemove($event)"
+      ></app-task-card>
+    </div>
+  </div>
+  <div class="col-3" id="accepted" pDroppable="task" (onDrop)="drop($event)">
+    <div class="flex flex-column" *ngFor="let task of accepted">
+      <app-task-card
+        style="margin: 10px"
+        [cardDetails]="task"
+        pDraggable="task"
+        (onDragStart)="dragStart(task)"
+        (emittedCardDetails)="cardDetailsToRemove($event)"
+      ></app-task-card>
+    </div>
+  </div>
+</div>

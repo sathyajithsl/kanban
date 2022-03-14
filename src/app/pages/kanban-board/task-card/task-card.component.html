@@ -1,0 +1,10 @@
+<p-card [header]="cardDetails.title">
+  {{ cardDetails.description }}
+  <ng-template pTemplate="footer">
+    <p-button
+      label="Delete"
+      icon="pi pi-trash"
+      (onClick)="deletedCardData(cardDetails)"
+    ></p-button>
+  </ng-template>
+</p-card>

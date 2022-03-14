@@ -1,0 +1,36 @@
+<p-menubar [model]="items">
+  <ng-template pTemplate="end">
+    <div class="grid">
+      <div class="col">
+        <input type="text" pInputText placeholder="Title" [(ngModel)]="title" />
+      </div>
+      <div class="col">
+        <input
+          type="text"
+          pInputText
+          placeholder="Description"
+          [(ngModel)]="description"
+        />
+      </div>
+      <div class="col">
+        <p-dropdown
+          [options]="statuses"
+          [(ngModel)]="selectedStatus"
+          optionLabel="name"
+        ></p-dropdown>
+      </div>
+      <div class="col">
+        <button
+          pButton
+          pRipple
+          type="button"
+          icon="pi pi-plus"
+          class="p-button-secondary"
+          pTooltip="Add New Task"
+          tooltipPosition="top"
+          (click)="createCard()"
+        ></button>
+      </div>
+    </div>
+  </ng-template>
+</p-menubar>
